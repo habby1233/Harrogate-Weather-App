@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather in Harrogate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .temperature {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+        .description {
+            font-size: 24px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather in Harrogate</h1>
+        {% if weather %}
+            <div class="temperature">{{ weather.temperature }}</div>
+            <div class="description">{{ weather.description }}</div>
+        {% else %}
+            <p>Could not retrieve weather data. Please try again later.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
